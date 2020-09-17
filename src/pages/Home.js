@@ -4,7 +4,6 @@ import Hero from '../components/Hero/Hero';
 import {NavLink} from 'react-router-dom';
 import Services from '../components/Services/Services';
 import FeaturedRooms from '../components/FeaturedRooms/FeaturedRooms';
-import Button from '../components/StyledHero/StyledHero';
 
 const Home = () => {
     return (
