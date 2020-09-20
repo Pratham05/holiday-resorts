@@ -1,5 +1,5 @@
 import React from 'react';
-import {useContext} from 'react';
+import {useContext, useEffect} from 'react';
 import {RoomContext} from '../../../room-context'
 import Title from '../../Title/Title';
 import classes from './RoomFilter.module.css';
@@ -57,16 +57,32 @@ const RoomFilter = () => {
                 {/* Price Range Ends */}
                 {/* size */}
                 <div className={classes.formGroup}>
-                    <label htmlFor="size">Room Size</label>
+                    <label htmlFor="size">Room Size(Sq. Ft)</label>
                     <div className={classes.sizeInputs}>
-                    <input type="number" name="minSize"
-                    id="size" value={minSize} onChange={changeHandler} className={classes.sizeInput}/>
-                    <input type="number" name="maxSize"
-                    id="size" value={maxSize} onChange={changeHandler} className={classes.sizeInput}/>
-                    </div>
-                    
+                        <input type="number" name="minSize"
+                        id="size" value={minSize} onChange={changeHandler} className={classes.sizeInput}/>
+                        <input type="number" name="maxSize"
+                        id="size" value={maxSize} onChange={changeHandler} className={classes.sizeInput}/>
+                    </div>  
                 </div> 
                 {/* end of size */}
+                {/* Extras */}
+                <div className={classes.formGroup}>
+                    <div className={classes.singleExtra}>
+                        <label htmlFor="breakfast">breakfast</label>
+                        <input type="checkbox" name="breakfast"
+                        id="breakfast" checked={breakfast} onChange={changeHandler} />
+                    </div>  
+                </div> 
+
+                <div className={classes.formGroup}>
+                    <div className={classes.singleExtra}>
+                        <label htmlFor="pets">pets</label>
+                        <input type="checkbox" name="pets"
+                        id="pets" checked={pets} onChange={changeHandler} />
+                    </div>  
+                </div> 
+                {/* End of Extras */}
             </form>
         </section>
     );
