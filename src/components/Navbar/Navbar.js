@@ -4,11 +4,19 @@ import logo from '../../images/logo.svg';
 import classes from './Navbar.module.css';
 import {FaAlignRight} from 'react-icons/fa';
 
+/** 
+  * @desc Component for rendering the Navbar for the application
+*/
 export default class Navbar extends Component {
+    // the state property is used for storing the state of menu (Open/Closed)
+    // when on mobile display
     state = {
         isOpen: false
     }
 
+    /** 
+      * @desc Handles toggle for hamburger icon when on mobile display
+    */
     toggleHandler = () => {
         // Toggling the state immutably using the prevstate
         this.setState(prevState => ({isOpen: !prevState.isOpen}));

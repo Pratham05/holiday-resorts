@@ -6,6 +6,10 @@ import {Route, Switch} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import SingleRoom from './pages/SingleRoom/SingleRoom';
 
+/** 
+  * @desc The root element for the applications
+  * Renders the routing components and the navbar for the entire application
+*/
 function App() {
   return (
     <React.Fragment>

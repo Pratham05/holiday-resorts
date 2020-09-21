@@ -3,6 +3,10 @@ import Banner from '../components/Banner/Banner';
 import Hero from '../components/Hero/Hero';
 import {NavLink} from 'react-router-dom';
 
+/** 
+  * @desc Component for display of incorrect urls
+  * Every incorrect url routes to this component
+*/
 const Error = () => {
     return (
         <Hero>

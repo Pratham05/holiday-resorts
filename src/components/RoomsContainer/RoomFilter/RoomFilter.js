@@ -4,22 +4,36 @@ import {RoomContext} from '../../../room-context'
 import Title from '../../Title/Title';
 import classes from './RoomFilter.module.css';
 
-// get all unique values
-
+/** 
+  * @desc used to get only unique elements from an object
+  * @param array $items - An array of items which needs to be filtereds
+  * @param string $filterValue - the value of the property on the basis of which 
+  * the filtering is warrented
+  * @returns - an array of unique values
+*/
 const getUniqueValues = (items, filterValue) => {
     return [...new Set(items.map(item => item[filterValue]))];
 }
 
+/** 
+  * @desc Component for rendering the filter feature for room filtering
+  * Utilizes context for getting the required parameters for the input elements
+  * and function to handle the change made in the input elements
+*/
 const RoomFilter = () => {
     const {
         rooms, changeHandler, type, capacity, price, minPrice, maxPrice, minSize, maxSize, breakfast, pets
     } = useContext(RoomContext);
 
     let types = getUniqueValues(rooms, 'type');
+
+    // all added as types won't create an all category
+    // also create array of options for different categories
     types = ['all', ...types].map((type, index) => {
     return <option value={type} key={index}>{type}</option>
     });
 
+    // array of options to be rendered for selecting the number of persons
     let people = getUniqueValues(rooms, 'capacity').map((item, index) => (
         <option key={index} value={item}>{item}</option>
     ));
@@ -69,17 +83,14 @@ const RoomFilter = () => {
                 {/* Extras */}
                 <div className={classes.formGroup}>
                     <div className={classes.singleExtra}>
-                        <label htmlFor="breakfast">breakfast</label>
                         <input type="checkbox" name="breakfast"
                         id="breakfast" checked={breakfast} onChange={changeHandler} />
+                        <label htmlFor="breakfast">breakfast</label>
                     </div>  
-                </div> 
-
-                <div className={classes.formGroup}>
                     <div className={classes.singleExtra}>
-                        <label htmlFor="pets">pets</label>
                         <input type="checkbox" name="pets"
                         id="pets" checked={pets} onChange={changeHandler} />
+                        <label htmlFor="pets">pets</label>
                     </div>  
                 </div> 
                 {/* End of Extras */}

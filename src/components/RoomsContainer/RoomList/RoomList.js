@@ -2,6 +2,10 @@ import React, {useEffect}from 'react';
 import Room from '../../Room/Room';
 import classes from './RoomList.module.css';
 
+/** 
+  * @desc Component for rendering the list of rooms
+  * @param object $rooms - The rooms object containing the rooms to be displayed in a sorted order
+*/
 const RoomList = ({rooms}) => {
     if (!rooms.length) {
         return (

@@ -3,6 +3,10 @@ import {FaCocktail, FaHiking, FaShuttleVan, FaBeer} from 'react-icons/fa'
 import Title from '../Title/Title';
 import classes from './Services.module.css';
 
+/** 
+  * @desc Component used to render the different services provided by the resort
+  * The servces and their corresponding icon components are stored as the component state
+*/
 export default class Services extends Component {
     state = {
         services : [

@@ -3,6 +3,11 @@ import items from './data';
 
 const RoomContext = React.createContext();
 
+/** 
+  * @desc A class based component which is used to create and provide access to a context object
+  * Also privides utility methods for performing filters on the basis of some DOM inputs
+  * and state values
+*/
 class RoomProvider extends Component {
     state = {
         rooms: [],
@@ -20,7 +25,10 @@ class RoomProvider extends Component {
         pets: false
     };
 
-    // get Data from the server
+    /** 
+      * @desc Used to get data from the database
+      * and then perform state changes by extracting the corresponding state values
+    */
     componentDidMount () {
         let rooms = this.formatData(items);
         let featuredRooms = rooms.filter(room => room.featured === true);
@@ -38,6 +46,11 @@ class RoomProvider extends Component {
         });
     }
 
+    /** 
+      * @desc Helper method to format data from the db according to the state variables
+      * @param object - containing the data obtained from the db
+      * @return object - Rooms object with formated properties
+    */
     formatData (items) {
         let rooms = items.map(item => {
             let id = item.sys.id;
@@ -48,21 +61,35 @@ class RoomProvider extends Component {
         return rooms;
     }
 
+    /** 
+      * @desc Used to find the room on the basis of a slug
+      * @param string $slug - the slug passed in the url for identifying the room object
+      * @return object - room which has been selected from the url
+    */
     getRoom = (slug) => {
         let tempRooms = [...this.state.rooms];
         // Here find gets the first object with the slug match
         return tempRooms.find((room) => room.slug === slug);
     }
 
+    /** 
+      * @desc Used to handle changes made in the room filter componenet from input elements
+      * Updates the corresponding properties of the state
+      * @param object $event - The event object which is changed
+    */
     changeHandler = event => {
         const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value
         console.log(event.target.name, value);
         this.setState({
             [event.target.name]: value
-        }, // the filterRooms is called with the updated state
+        }, // the filterRooms is called with the updated state after successful setState
         this.filterRooms);
     }
 
+    /** 
+      * @desc Used to update the state's room property with filtered values 
+      * obtained from the filter component through the input elements
+    */
     filterRooms = () => {
         let {
             rooms, type, capacity, price, minSize, maxSize, breakfast, pets
@@ -111,8 +138,6 @@ class RoomProvider extends Component {
         });
     }
 
-
-
     render() {
         return (
             <RoomContext.Provider value={{
@@ -125,18 +150,10 @@ class RoomProvider extends Component {
     }
 }
 
+// The consumer object for consuming the context in functional components
 const RoomConsumer = RoomContext.Consumer;
 
-export function withRoomConsumer(Component) {
-    return (props) => {
-        return (
-            <RoomConsumer>
-                {value => <Component {...props} context={value}/>}
-            </RoomConsumer>
-        );
-    }
-}
 
-export {RoomProvider, RoomConsumer, RoomContext};
+export { RoomProvider, RoomConsumer, RoomContext };
 
 

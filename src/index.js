@@ -9,7 +9,9 @@ import {BrowserRouter} from 'react-router-dom';
 import {RoomProvider} from './room-context';
 
 ReactDOM.render(
+  // BrowserRouter added here to give routing capability to the entire app
   <React.StrictMode>
+    {/* Room Provider gives the context access to the entire application by wrapping in context provider */}
     <RoomProvider>
       <BrowserRouter>
         <App />

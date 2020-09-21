@@ -1,3 +1,4 @@
+/* Global styles for the application */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
 :root {
   --primaryColor: #af9a7d;
   --mainWhite: #fff;
-  --offWhite: #f7f7f7;
+  --offWhite: #a19f9f;
   --mainBlack: #222;
   --mainGrey: #ececec;
   --darkGrey: #cfcfcf;
@@ -70,7 +71,7 @@ h6 {
   background: transparent;
   color: var(--primaryColor);
 }
-.loading {
+/* .loading {
   text-transform: capitalize;
   text-align: center;
   margin-top: 3rem;
@@ -86,5 +87,5 @@ h6 {
   margin: 2rem 0;
   padding: 1rem;
   letter-spacing: var(--mainSpacing);
-}
+} */
 /* end of globals */

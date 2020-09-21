@@ -5,9 +5,14 @@ import Spinner from '../Spinner/Spinner';
 import {useContext} from 'react';
 import {RoomContext} from '../../room-context';
 
-
+/** 
+  * @desc Component used for rendering the rooms page
+  * It further calls the roomfilter component for providing filtering features
+  * and the RoomList componenet for rendering the rooms in a sorted form
+  * Utilizes context for getting the loading state and the sorted list of rooms
+*/
 const RoomsContainer = () => {
-    const {loading, sortedRooms, rooms} = useContext(RoomContext);
+    const {loading, sortedRooms} = useContext(RoomContext);
     if (loading) {
         return <Spinner/>;
     }
@@ -20,33 +25,3 @@ const RoomsContainer = () => {
 }
 
 export default RoomsContainer;
-
-
-// import React from 'react';
-// import RoomList from './RoomList';
-// import RoomFilter from './RoomFilter';
-// import {RoomConsumer} from '../../room-context';
-// import Spinner from '../Spinner/Spinner';
-
-// const RoomsContainer = () => {
-//     return (
-//         //For rooms filter and rooms list
-//         <RoomConsumer>
-//             {
-//                 (value) => {
-//                     const {loading, sortedRooms, rooms} = value;
-//                     if (loading) {
-//                         return <Spinner/>;
-//                     }
-//                     return(
-//                         <div>
-//                             <RoomFilter rooms={rooms}/>
-//                             <RoomList rooms={sortedRooms}/>
-//                         </div>
-//                     );         
-//             }}
-//         </RoomConsumer>     
-//     );
-// }
-
-// export default RoomsContainer;

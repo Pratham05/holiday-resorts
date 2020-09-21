@@ -6,6 +6,10 @@ import Title from '../Title/Title';
 
 import classes from './FeaturedRooms.module.css';
 
+/** 
+  * @desc Component for rendering the featured rooms 
+  * Utlises context for getting the featured rooms
+*/
 export default class FeaturedRooms extends Component {
 
     static contextType = RoomContext;

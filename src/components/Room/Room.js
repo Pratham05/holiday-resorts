@@ -5,6 +5,10 @@ import classes from './Room.module.css';
 import defaultImg from '../../images/room-1.jpeg';
 import PropTypes from 'prop-types';
 
+/** 
+  * @desc Component for rendering details of a particular room
+  * @param object $props - the name, slug, images and price for the room as props
+*/
 const Room = (props) => {
     const {name, slug, images, price} = props.room;
 
@@ -27,6 +31,7 @@ const Room = (props) => {
     );
 }
 
+// Defining proptypes for the room component
 Room.protoTypes = {
     room: PropTypes.shape({
         name: PropTypes.string.isRequired,

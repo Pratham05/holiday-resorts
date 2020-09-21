@@ -8,7 +8,10 @@ import Error from '../Error';
 
 import classes from './SingleRoom.module.css';
 
-
+/** 
+  * @desc Component for display of a single room in the db
+  * Gets the data from the context using context type
+*/
 export default class SingleRoom extends Component {
     constructor(props) {
         super(props);
@@ -19,13 +22,6 @@ export default class SingleRoom extends Component {
     }
 
     static contextType = RoomContext;
-
-    // componentDidMount() {
-    //     console.log('*****', this.state.slug)
-    //     const {getRoom} = this.context;
-    //     const room = getRoom(this.state.slug);
-    //     console.log("Naya Method", room);
-    // }
 
     render() {
         console.log("SingleRoomRendered")
