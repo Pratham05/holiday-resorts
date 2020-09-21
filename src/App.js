@@ -5,6 +5,7 @@ import Error from './pages/Error';
 import {Route, Switch} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import SingleRoom from './pages/SingleRoom/SingleRoom';
+import Footer from './components/Footer/Footer';
 
 /** 
   * @desc The root element for the applications
@@ -20,6 +21,7 @@ function App() {
         <Route path="/rooms/:slug" component={SingleRoom} />
         <Route component={Error}/>
       </Switch>
+      <Footer/>
     </React.Fragment>
   );
 }

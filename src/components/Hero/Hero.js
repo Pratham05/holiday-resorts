@@ -14,7 +14,7 @@ const Hero = (props) => {
         }
     }
     return (
-        <header  style={styleWrap} className={classes[props.heroType]}>
+        <header  style={styleWrap} className={[classes[props.heroType], classes.overlay].join(' ')}>
             {props.children}
             
         </header>

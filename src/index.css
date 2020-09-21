@@ -5,9 +5,9 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: #af9a7d;
+  --primaryColor: #f7c08a;
   --mainWhite: #fff;
-  --offWhite: #a19f9f;
+  --offWhite: #f7f7f7;
   --mainBlack: #222;
   --mainGrey: #ececec;
   --darkGrey: #cfcfcf;
@@ -19,7 +19,6 @@
 
 /* globals */
 body {
-  padding-top: 66px;
   color: var(--mainBlack);
   background: var(--mainWhite);
   font-family: Verdana, Geneva, Tahoma, sans-serif;

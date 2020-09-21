@@ -8,7 +8,7 @@ import {FaAlignRight} from 'react-icons/fa';
   * @desc Component for rendering the Navbar for the application
 */
 export default class Navbar extends Component {
-    // the state property is used for storing the state of menu (Open/Closed)
+    // the state property is used for storing the state of menu (Open/Close)
     // when on mobile display
     state = {
         isOpen: false

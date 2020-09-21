@@ -6,6 +6,25 @@
   align-items: center;
   justify-content: center;
 }
+
+.defaultHero::before,
+.roomsHero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: calc(100vh - 66px);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.roomsHero::before{
+  min-height: 60vh;
+}
+
+
+
 .roomsHero {
   background-image: url("../../images/room-2.jpeg");
   min-height: 60vh;

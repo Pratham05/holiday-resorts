@@ -3,6 +3,7 @@
   }
   .services {
     background: var(--darkGrey);
+
     text-align: center;
   }
   .servicesCenter {
@@ -15,7 +16,7 @@
   }
   .service span {
     display: inline-block;
-    color: var(--primaryColor);
+    color: var(--mainBlack);
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
